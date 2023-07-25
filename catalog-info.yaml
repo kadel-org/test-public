@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: asdf
+  name: ddd
 spec:
   type: service
   lifecycle: production
