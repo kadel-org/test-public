@@ -9,4 +9,6 @@ on:
 
 jobs:
   call-shared-workflow:
+    permissions:
+      issues: write
     uses: kadel-org/shared-workflows/.github/workflows/issue-management.yaml@main
