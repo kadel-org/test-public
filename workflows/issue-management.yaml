@@ -1,0 +1,12 @@
+
+on:
+  issues:
+    types:
+    - opened
+    - reopened
+    - labeled
+    - unlabeled
+
+jobs:
+  call-shared-workflow:
+    uses: kadel-org/shared-workflows/.github/workflows/issue-management.yaml@main
