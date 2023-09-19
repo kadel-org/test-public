@@ -12,3 +12,6 @@ jobs:
     permissions:
       issues: write
     uses: kadel-org/shared-workflows/.github/workflows/issue-management.yaml@main
+    secrets:
+      PROJECT_MANAGEMENT_TOKEN: ${{ secrets.PROJECT_MANAGEMENT_TOKEN }}
+
