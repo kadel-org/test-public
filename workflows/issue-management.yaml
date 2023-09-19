@@ -8,28 +8,7 @@ on:
     - unlabeled
 
 jobs:
-  manage_issue_labels:
-    name: Label issue
-    if: ${{ github.event.action == 'opened' || github.event.action == 'reopened' }}
-    runs-on: ubuntu-latest
-    concurrency: issue_labels-${{ github.event.issue.number }}
+  call-shared-workflow:
     permissions:
       issues: write
-    steps:
-        - run: gh issue edit $ISSUE --add-label "needs-triage"
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            ISSUE: ${{ github.event.issue.html_url }}
-
-  manage_issue_in_project:
-    name: add issue to project
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-    if: ${{ always() }}
-    concurrency: issue_management_in_project-${{ github.event.issue.number }}-${{ github.event.action }}    
-    steps:
-      - run:  gh project item-add 1 --owner monalisa --url  $ISSUE 
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE: ${{ github.event.issue.html_url }}
+    uses: kadel-org/shared-workflows/.github/workflows/issue-management.yaml@main
