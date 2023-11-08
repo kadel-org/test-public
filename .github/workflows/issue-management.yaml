@@ -13,7 +13,7 @@ jobs:
       - run: |
           set -x
           set -e
-          gh issue --repo ${{context.repo.owner}}/${{context.repo.repo}} edit ${{context.issue.number}} --add-label "post-FF"
+          gh issue --repo ${{github.event.repository.organization}}/${{github.event.repository}} edit ${{github.event.issue.number}} --add-label "post-FF"
           
         env:
           GH_TOKEN: ${{ github.token }}
