@@ -1,0 +1,14 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test-public
+  description: asdf
+  annotations:
+    backstage.io/kubernetes-id: test-public
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: kadel-org/test-public
+spec:
+  type: api
+  lifecycle: production
+  owner: asdf
