@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rbac
+  title: RBAC Service
+  description: Role-Based Access Control component for testing
+  annotations:
+    backstage.io/source-location: url:https://github.com/kadel-org/test-public
+  tags:
+    - rbac
+    - security
+    - test
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:default/kadel
